@@ -23,14 +23,17 @@ namespace WpfControlLibrary.Views
     /// </summary>
     public partial class FirstWindow : Window
     {
+        private readonly Locator locator = Locator.Instance;
+        private ClosingCourse closingCourse;
         public FirstWindow(ClosingCourse closingCourse) //: this()
         {
             InitializeComponent();
             this.closingCourse = closingCourse;
-            this.DataContext = new FirstViewModel(closingCourse);
+
+
+            locator.FirstViewModel = new FirstViewModel(closingCourse);
         }
 
-        private ClosingCourse closingCourse;
 
 
         public ClosingCourse ClosingCourse => this.closingCourse;

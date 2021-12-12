@@ -1,15 +1,11 @@
 ﻿using ModelLib.DataObjects;
 using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WpfControlLibrary.ViewModels
 {
     internal class FirstViewModel : BindableBase
     {
+        /// <summary>Если это публичный член, то это должно быть свойство.</summary>
         public ClosingCourse ClosingCourse;
 
         public FirstViewModel(ClosingCourse closingCourse)
@@ -21,33 +17,18 @@ namespace WpfControlLibrary.ViewModels
             FirstContentVM = new FirstContentViewModel(closingCourse);
         }
 
-        private BindableBase _CurrentView;
-        public BindableBase CurrentView
+        private object _currentView;
+        public object CurrentView
         {
-            get { return _CurrentView; }
-            set { SetProperty(ref _CurrentView, value); }
+            get => _currentView;
+            set => SetProperty(ref _currentView, value);
         }
 
-        
-        private BindableBase _StatusBarVM;
-        public BindableBase StatusBarVM
-        {
-            get { return _StatusBarVM; }
-            set { SetProperty(ref _StatusBarVM, value); }
-        }
 
-        private BindableBase _MenuVM;
-        public BindableBase MenuVM
-        {
-            get { return _MenuVM; }
-            set { SetProperty(ref _MenuVM, value); }
-        }
+        public StatusBarViewModel StatusBarVM { get; }
 
-        private BindableBase _FirstContentVM;
-        public BindableBase FirstContentVM
-        {
-            get { return _FirstContentVM; }
-            set { SetProperty(ref _FirstContentVM, value); }
-        }
+        public MenuViewModel MenuVM { get; }
+
+        public FirstContentViewModel FirstContentVM { get; }
     }
 }

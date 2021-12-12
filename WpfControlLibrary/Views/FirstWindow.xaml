@@ -10,9 +10,12 @@
                
         mc:Ignorable="d"
         
-        Title="FirstWindow - ClosingCourse" Height="450" Width="800">
+        Title="FirstWindow - ClosingCourse" Height="450" Width="800"
+        DataContext="{Binding  FirstViewModel, Source={x:Static local:Locator.Instance}}">
 
     <Window.Resources>
+        <!--<x:Static Member="local:Locator.Instance" x:Key="locator"/>-->
+
         <ResourceDictionary>
 
             <!--Так как это библиотека, то здесь нет App.xaml-->

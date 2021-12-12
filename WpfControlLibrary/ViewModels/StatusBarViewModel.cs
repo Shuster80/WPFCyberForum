@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace WpfControlLibrary.ViewModels
 {
-    internal class StatusBarViewModel : BindableBase
+    public class StatusBarViewModel : BindableBase
     {
 
         private ClosingCourse closingCourse;
